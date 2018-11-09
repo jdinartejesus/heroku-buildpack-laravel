@@ -106,7 +106,7 @@ heroku config:set HT_AUTH={username} {password}
 
 It will also append the authentication code in **public/.htaccess**
 
-```apa
+```apache
 AuthType Basic
 AuthName "Restricted Access"
 AuthUserFile /app/.htpasswd
