@@ -705,7 +705,7 @@ mmeasure "dependencies.count" $(composer show --installed 2> /dev/null | wc -l)
 
 if cat "$COMPOSER" | python -c 'import sys,json; sys.exit("compile" not in json.load(sys.stdin).get("scripts", {}));'; then
 	status "Running 'composer compile'..."
-	composer run-script ${HEROKU_PHP_INSTALL_DEV-"--no-dev"} --no-interaction compile 2>&1 | indent || {
+	composer run-script ${HEROKU_PHP_INSTALL_DEV-"--no-dev"} ${COMPOSER_DEV-"--no-dev"} --no-interaction compile 2>&1 | indent || {
 		mcount "failures.compile_step"
 		error <<-EOF
 			Compile step failed!
