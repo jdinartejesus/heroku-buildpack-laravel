@@ -1,5 +1,39 @@
 # heroku-buildpack-php CHANGELOG
 
+## v169 (2020-01-26)
+
+### CHG
+
+- Try and tell SIGTERM cases apart in boot scripts for more precise messaging on shutdown [David Zuelke]
+
+### FIX
+
+- Shell may emit confusing "... Terminated ..." messages on shutdown [David Zuelke]
+- PHP-FPM startup failures may trigger race condition where dyno boot hangs [David Zuelke]
+
+## v168 (2020-01-24)
+
+### ADD
+
+- PHP/7.2.27 [David Zuelke]
+- PHP/7.3.14 [David Zuelke]
+- ext-blackfire/1.30.0 [David Zuelke]
+- ext-newrelic/9.6.1.256 [David Zuelke]
+- ext-pq/2.1.6 [David Zuelke]
+
+### CHG
+
+- Composer/1.9.2 [David Zuelke]
+- libcassandra/2.15.0 [David Zuelke]
+
+## v167 (2020-01-23)
+
+### CHG
+
+- Graceful shutdown for boot scripts on SIGTERM and SIGINT [David Zuelke]
+- Dynamically poll for `newrelic-daemon` readiness on dyno boot instead of using blanket two-second wait [David Zuelke]
+- Dynamically poll for PHP-FPM readiness on dyno boot instead of using blanket two-second wait [David Zuelke]
+
 ## v166 (2019-12-20)
 
 ### ADD
